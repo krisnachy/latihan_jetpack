@@ -30,7 +30,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    //Bagian sini juga harus diganti agar build sama seperti preview
+                    Column {
+                        Greeting("Android")
+                        MyColumn()
+                    }
                 }
             }
         }
@@ -41,7 +45,10 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String) {
     //Jika tidak memakai kolom maka akan ditumpuk seperti ini
     Text(text = "Hello $name!")
+}
 
+@Composable
+fun MyColumn() {
     Column(
         modifier = Modifier
             .padding(8.dp)
@@ -89,6 +96,9 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     LatihanJetpackTheme {
-        Greeting("Android")
+        Column {
+            Greeting("Android")
+            MyColumn()
+        }
     }
 }
