@@ -97,8 +97,11 @@ fun MyColumn() {
 fun DefaultPreview() {
     LatihanJetpackTheme {
         Column {
-            Greeting("Android")
-            MyColumn()
+//            Greeting("Android")
+//            MyColumn()
+            TextCustomization()
+            MakeColorful()
+            LotOfText()
         }
     }
 }
